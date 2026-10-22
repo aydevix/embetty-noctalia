@@ -1,0 +1,102 @@
+id          = "ayone/embetty-noctalia"
+name        = "Embetty Noctalia"
+version     = "1.0.1"
+plugin_api  = 33
+author      = "ayone"
+license     = "MIT"
+icon        = "terminal-2"
+description = "Embetty Noctalia: an embedded terminal with named, persistent PTY sessions and a destructive-command guard."
+tags        = ["terminal", "shell", "sessions", "productivity"]
+dependencies = ["python3"]
+
+[[setting]]
+key             = "shell"
+type            = "string"
+label_key       = "settings.shell.label"
+description_key = "settings.shell.description"
+default         = "bash"
+
+[[setting]]
+key             = "startup_command"
+type            = "string"
+label_key       = "settings.startup_command.label"
+description_key = "settings.startup_command.description"
+default         = ""
+
+[[setting]]
+key             = "scrollback_chars"
+type            = "int"
+label_key       = "settings.scrollback_chars.label"
+description_key = "settings.scrollback_chars.description"
+default         = 16000
+min             = 2000
+max             = 120000
+
+[[setting]]
+key             = "max_sessions"
+type            = "int"
+label_key       = "settings.max_sessions.label"
+description_key = "settings.max_sessions.description"
+default         = 12
+min             = 1
+max             = 32
+
+[[setting]]
+key             = "block_destructive"
+type            = "bool"
+label_key       = "settings.block_destructive.label"
+description_key = "settings.block_destructive.description"
+default         = true
+
+[[setting]]
+key             = "font_family"
+type            = "string"
+label_key       = "settings.font_family.label"
+description_key = "settings.font_family.description"
+default         = "DejaVu Sans Mono"
+
+[[setting]]
+key             = "font_size"
+type            = "int"
+label_key       = "settings.font_size.label"
+description_key = "settings.font_size.description"
+default         = 12
+min             = 8
+max             = 28
+
+[[setting]]
+key             = "glyph"
+type            = "glyph"
+label_key       = "settings.glyph.label"
+description_key = "settings.glyph.description"
+default         = "terminal-2"
+
+[[setting]]
+key             = "show_label"
+type            = "bool"
+label_key       = "settings.show_label.label"
+description_key = "settings.show_label.description"
+default         = false
+
+[[panel]]
+id                 = "terminal"
+entry              = "panel.luau"
+width              = 920
+height             = 640
+placement          = "floating"
+position           = "center"
+keyboard_focus     = "exclusive"
+open_near_click    = false
+dismiss_on_outside_click = true
+
+[[widget]]
+id    = "widget"
+entry = "widget.luau"
+
+[[shortcut]]
+id    = "shortcut"
+entry = "shortcut.luau"
+
+[[service]]
+id    = "service"
+entry = "service.luau"
