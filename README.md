@@ -74,6 +74,15 @@ noctalia msg plugins enable ayone/embetty-noctalia
 источниками плагинов. Noctalia перезагружает `.luau`-файлы автоматически;
 изменения `plugin.toml` подхватываются при перезагрузке конфигурации.
 
+### Из GitHub
+
+```bash
+git clone https://github.com/aydevix/embetty-noctalia.git
+mkdir -p ~/.local/share/noctalia/plugins
+cp -a embetty-noctalia ~/.local/share/noctalia/plugins/embetty-noctalia
+noctalia msg plugins enable ayone/embetty-noctalia
+```
+
 ### Обычная установка
 
 Скопируйте каталог плагина (без симлинка), чтобы он не зависел от рабочей
