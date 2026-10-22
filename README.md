@@ -9,6 +9,23 @@
 pipe, перенаправления и построчные интерактивные приглашения работают;
 полноэкранные TUI-программы — нет (подробности ниже).
 
+## Скриншоты
+
+<p align="center">
+  <a href="docs/screenshots/terminal.png">
+    <img src="docs/screenshots/terminal.png" width="820" alt="Embetty Noctalia: встроенная панель терминала с выводом fastfetch">
+  </a>
+</p>
+<p align="center"><em>Панель внутри Noctalia: именованная сессия, живой вывод и готовый shell prompt.</em></p>
+
+| Режим пароля | Защита от опасных команд |
+|:---:|:---:|
+| <a href="docs/screenshots/password.png"><img src="docs/screenshots/password.png" width="380" alt="Ввод пароля в Embetty Noctalia: замок и скрытое поле"></a> | <a href="docs/screenshots/guard.png"><img src="docs/screenshots/guard.png" width="380" alt="Предупреждение о блокировке команды rm -rf /"></a> |
+| Замок, скрытое поле и кнопка показать/скрыть. Пароль не попадает в историю. | `rm -rf /` заблокирован: причина показана прямо в панели. |
+
+При блокировке команда не отправляется в PTY, а Noctalia дополнительно
+показывает уведомление об ошибке.
+
 ## Возможности
 
 - Панель внутри Noctalia, без отдельного окна терминала.
@@ -320,8 +337,9 @@ snapshot changes, so display updates do not spawn a Python process per frame.
 The panel renders up to the last 4000 characters while keeping the full snapshot
 for copying, with a 1 Hz/frame-tick fallback if the helper is unavailable.
 A heuristic safety guard blocks classic destructive commands such as
-`sudo rm -rf /`, but it is not a sandbox. See the Russian sections above for
-installation, settings, data paths, IPC, and limitations.
+`sudo rm -rf /`, but it is not a sandbox. Screenshots of the main panel, masked
+password entry, and the guard are in `docs/screenshots/`. See the Russian
+sections above for installation, settings, data paths, IPC, and limitations.
 
 ## Лицензия
 
